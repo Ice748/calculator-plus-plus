@@ -9,7 +9,7 @@ pub fn menu() {
     loop {
         data.clear();
 
-        utilities::clear();
+        crate::utilities::clear();
         println!("Calculator++\n");
 
         for i in 0..BTNS.len() {
@@ -23,7 +23,7 @@ pub fn menu() {
                 0 => standard_mode(),
                 1 => about(),
                 2 => {
-                    utilities::clear();
+                    crate::utilities::clear();
                     std::process::exit(0);
                 }
 
@@ -38,13 +38,13 @@ pub fn menu() {
 pub fn standard_mode() {
     let mut data = String::new();
 
-    utilities::clear();
+    crate::utilities::clear();
     io::stdin().read_line(&mut data).expect("Error to read line");
 }
 
 pub fn about() {
     let mut data = String::new();
 
-    utilities::clear();
+    crate::utilities::clear();
     io::stdin().read_line(&mut data).expect("Error to read line");
 }
