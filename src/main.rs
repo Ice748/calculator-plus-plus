@@ -1,5 +1,5 @@
 mod scenes;
 
 fn main() {
-    scenes::menu();
+    crate::scenes::menu();
 }
