@@ -7,6 +7,11 @@ const ERROR_003: &str = "ERROR 003: Action is invalid";
 const ERROR_004: &str = "ERROR 004: 2nd number is invalid";
 const ERROR_005: &str = "ERROR 005: Zero division";
 
+const LOGO: &str = concat!(
+    "|\\__/ |  ( )   Calculator++\n",
+    "|o o  |   ) )  by Ice748\n"
+);
+
 // Main scene
 fn main() {
     const BTNS: &[&str] = &["Standard mode", "About", "Exit"];
@@ -17,7 +22,7 @@ fn main() {
         data.clear();
 
         clear();
-        println!("Calculator++\n");
+        println!("{}", LOGO);
 
         for i in 0..BTNS.len() {
             let prefix = if i == btn { ">>" } else { ">" };
@@ -110,7 +115,9 @@ fn about() {
     let mut data = String::new();
 
     clear();
-    io::stdin().read_line(&mut data).expect("Error to read line");
+    println!("{}", LOGO);
+    println!("Calculator++ is a terminal-based advanced calculator written in pure Rust. Free to use and open source.");
+    io::stdin().read_line(&mut data).expect(ERROR_001);
 }
 
 // Utilities
